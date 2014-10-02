@@ -2,13 +2,26 @@
  * Converts a number a string.
  * @param {number} n
  * @return {string} the number as a string
- */
+ */	
 
-/**
+var numberToString = function(n) {
+  return n + "";
+
+};
+
+numberToString(12);
+	
+ /**
  * Adds one to a given number.
  * @param {number} n
  * @return {number}
  */
+var increase = function(n){
+	return n+1;
+};
+
+increase(54);
+
 
 /**
  * Subtracts one from a given number.
@@ -16,12 +29,24 @@
  * @return {number}
  */
 
+ var decrease = function(n){
+ 	return n-1;
+ };
+
+decrease(72);
 /**
  * Adds two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the sum
  */
+var add = function(x,y){
+	return x+y;
+
+};
+
+add(2,78);
+
 
 /**
  * Subtracts the second number from the first.
@@ -30,25 +55,45 @@
  * @return {number} the difference
  */
 
+ var subtract = function(x,y){
+ 	return x-y;
+
+ };
+ subtract(11,5);
+
 /**
  * Multiplies two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the product
  */
-
+var multiply = function(x,y){
+	return x*y;
+};
+multiply(2,3);
 /**
  * Divides the first number by the second.
  * @param {number} x
  * @param {number} y
  * @return {number} the quotient
  */
+ var divide = function(x,y){
+ 	return x/y
+ };
+
+ divide(4,2);
 
 /**
  * Multiplies a number by itself.
  * @param {number} x, number to be squared
  * @return {number} squared
  */
+ var square = function(x){
+ 	return Math.pow(x, 2);
+
+ };
+ square(5);
+
 
 /**
  * Performs a mathematical operation on two numbers.
@@ -58,6 +103,12 @@
  * @param {number} y
  * @return {number} the result
  */
+ var calculate = function (operation,x,y){
+ 	return operation+x+y;
+
+ }
+
+ console.log(calculate("4+7=11",4,7));
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -65,6 +116,12 @@
  * @param {number} b
  * @return {boolean} `a` is larger than `b`
  */
+var isGreaterThan = function(a,b) {if (a>b)
+	{return true} else {return false}
+	
+};
+isGreaterThan(3,2);
+
 
 /**
  * Returns true if `a` is less than `b`.
@@ -72,6 +129,13 @@
  * @param {number} b
  * @return {boolean} `a` is smaller than `b`
  */
+ 
+var isLessThan = function(a,b) {if (a<b)
+	{return true} else {return false}
+	
+};
+isLessThan(2,3);
+
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -79,6 +143,13 @@
  * @param {number} b
  * @return {boolean} the numbers are equal
  */
+var areEqual = function (a,b){if (a===b)
+	{return true} else {return false}
+
+};
+
+areEqual(3,3);
+
 
 /**
  * Returns the smallest value of two numbers.
@@ -87,24 +158,62 @@
  * @return {number} the smallest number
  */
 
+var minimum = function (x,y){
+
+	return Math.min(x,y)
+
+};
+
+ minimum(3,1);
+
+
+
 /**
  * Returns the largest value of two numbers.
  * @param {number} x
  * @param {number} y
  * @return {number} the largest number
  */
+var maximum = function (x,y){
+
+	return Math.max(x,y)
+};
+
+maximum(3,1);
+
+
 
 /**
  * Returns true if `n` is even.
  * @param {number} n
  * @return {boolean} the number is even
  */
+var isEven = function (n){if (n%2 === 0)
+
+
+	{return true} else {return false}
+
+
+};
+
+isEven(4);
+
+
 
 /**
  * Returns true if `n` is odd.
  * @param {number} n
  * @return {boolean} the number is odd
  */
+
+ var isOdd = function (n){if (n%2 != 0)
+
+ 	{return true} else {return false}
+
+
+ };
+
+ isOdd(3);
 
 /**
  * Returns a letter grade.
@@ -118,12 +227,29 @@
  * @return {string} the score represented as a letter grade
  */
 
+
+
 /**
  * Checks if a `restaurant` object has are `views` field.
  * If it does, increase it by 1. If it does not,
  * set itsreviews` field to 1.
  * @param {object} restaurant represents a restaurant
  */
+function incrementReviews(restaurant) {
+
+console.log(typeof restaurant + " is " + typeof restaurant.reviews);
+
+
+if(restaurant.reviews) {
+  return this.reviews++;
+
+} else { return
+  restaurant.reviews = 1;
+}
+  console.log("value is " + restaurant.reviews);
+}
+
+
 
 /**
  * Joins two strings with a space.
@@ -131,6 +257,13 @@
  * @param {string} word2
  * @return {string} joined the words joined with a space
  */
+ var combine = function (word1, word2){
+ 	return word1 +" "+ word2;
+
+
+ };
+
+ combine("cat","dog");
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -139,3 +272,14 @@
  * @param {number} radius
  * @return {object} circle
  */
+
+ var circle = new Object();
+ circle.circumference = 2*Math.PI*radius;
+ circle.area = Math.PI*Math.pow(radius, 2);
+ var createCircle = function (radius) {
+ 	 
+ 	return circle
+
+ };
+
+ createCircle(5);
