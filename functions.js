@@ -96,6 +96,7 @@ multiply(2,3);
 
 
 /**
+	*Need Help with this one Mark
  * Performs a mathematical operation on two numbers.
  * Also prints out the equation: (i.e.) "1 + 5 = 6" or "8 / 2 = 4".
  * @param {string} operation "add", "subtract", "multiply", or "divide"
@@ -103,12 +104,49 @@ multiply(2,3);
  * @param {number} y
  * @return {number} the result
  */
- var calculate = function (operation,x,y){
- 	return operation+x+y;
+ function calculate (operation,x,y){
 
- }
+ 	var opSymbol = "";
+ 	var result = 0;
+ 	
+ 	if (operation == "add") {
+ 		result = x+y;
+ 		opSymbol = "+"
+	}
 
- console.log(calculate("4+7=11",4,7));
+	if (operation == "subtract") {
+
+		result = x-y
+		opSymbol = "-"
+	}
+
+	if (operation == "multiply") {
+		result = x*y
+		opSymbol = "*"
+
+
+
+	}
+
+	if (operation == "divide") {
+
+		result = x/y
+		opSymbol ="/"
+
+	}
+	console.log(x + " " + opSymbol + " " + y + " = " + result);
+return result;
+  
+ };
+
+calculate ("add", 5, 7);
+calculate ("subtract", 5, 7);
+calculate ("multiply", 5, 7);
+calculate ("divide", 5, 7);
+
+
+
+
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -216,6 +254,7 @@ isEven(4);
  isOdd(3);
 
 /**
+	*Need help with this one Mark
  * Returns a letter grade.
  * "A": 90-100%
  * "B": 80-89%
@@ -226,10 +265,37 @@ isEven(4);
  * @param {number} total maximum possible score
  * @return {string} the score represented as a letter grade
  */
+function letterGrade(score, totalPercentage){
+	var pct = score/totalPercentage;
+	
+	if (pct >= 0.9) 
+		
+		return "A";
+	
+	else if (pct >= 0.8)
+		
+		return "B";
+	
+	else if (pct >= 0.7)
+		
+		return "C";
 
+	else if (pct >= 0.6)
+		return "D";
+	
+	
+	else 
+
+	return "F";
+
+
+
+
+}
 
 
 /**
+	* Need Help With this one Mark
  * Checks if a `restaurant` object has are `views` field.
  * If it does, increase it by 1. If it does not,
  * set itsreviews` field to 1.
@@ -237,16 +303,15 @@ isEven(4);
  */
 function incrementReviews(restaurant) {
 
-console.log(typeof restaurant + " is " + typeof restaurant.reviews);
+	if (restaurant.reviews === undefined) 
 
+		restaurant.reviews = 1;
+		
+		else
+			restaurant.reviews++;
 
-if(restaurant.reviews) {
-  return this.reviews++;
+		return restaurant;
 
-} else { return
-  restaurant.reviews = 1;
-}
-  console.log("value is " + restaurant.reviews);
 }
 
 
@@ -266,20 +331,29 @@ if(restaurant.reviews) {
  combine("cat","dog");
 
 /**
+	*Need Help with this one Mark
  * Returns a circle object with the properties `circumference` and `area`.
  * Use Math.PI for the value π.
  * (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/PI)
  * @param {number} radius
  * @return {object} circle
  */
+function createCircle (radius){
+	var area = Math.PI*Math.pow(radius, 2);
+	var circumference = Math.PI*radius*2;
+	return {
+		area: area,
+		circumference: circumference
+	};
 
- var circle = new Object();
- circle.circumference = 2*Math.PI*radius;
- circle.area = Math.PI*Math.pow(radius, 2);
- var createCircle = function (radius) {
- 	 
- 	return circle
+ 
 
- };
+}
 
- createCircle(5);
+	
+
+console.log ("A circle with radius of " + radius + " has an area of " + myCircle.area + " and an circumference of " + myCircle.circumference + ".");
+
+
+
+
